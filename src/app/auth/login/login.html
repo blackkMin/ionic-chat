@@ -1,0 +1,63 @@
+
+
+
+<ion-content>
+
+    <div class="mycontain">
+        <div class="mylogo">
+            <img src="assets/imgs/yoov-logo.png" alt="">
+        </div>
+
+        <div class="myform">
+            <form #myForm="ngForm">
+                <div class="flex">
+                    <div class="mysvg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.cls-1{fill:none;}.cls-2{opacity:0.3;}.cls-3{fill:#292929;}</style></defs><title>资源 76</title><g id="图层_2" data-name="图层 2"><g id="图层_1-2" data-name="图层 1"><rect class="cls-1" width="50" height="50"/><g class="cls-2"><path class="cls-3" d="M31.76,15.53a8.71,8.71,0,0,1-12.62,0,8.71,8.71,0,0,1,0-12.62,8.72,8.72,0,0,1,12.62,0,8.71,8.71,0,0,1,0,12.62Z"/><path class="cls-3" d="M42.41,41.21c0,3-2.86,5.3-8.71,6.65a41.16,41.16,0,0,1-17.4,0c-5.85-1.35-8.71-3.6-8.71-6.65,0-13.63,7.59-21.63,17.41-21.63s17.41,8,17.41,21.63Z"/></g></g></g></svg>
+                    </div>
+                    <ion-input class="n-font"
+                           #focusinput
+                           type="number"
+                           required
+                           maxlength="11"
+                           minlength="11"
+                           name="phone"
+                           #phone="ngModel"
+                           [(ngModel)]="myAccount"
+                           placeholder="请输入11位手机号">
+                    </ion-input>
+                    <form-message [control]="phone" [fieldName]="'手机'"></form-message>
+                </div>
+                <div class="flex borderbottom">
+                    <div class="mysvg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.cls2-1{fill:#292929;opacity:0.3;}.cls2-2{fill:none;}</style></defs><title>资源 77</title><g id="图层_2" data-name="图层 2"><g id="图层_1-2" data-name="图层 1"><path class="cls2-1" d="M40.78,18.79h-2V15.05a13.77,13.77,0,0,0-27.54,0v3.74h-2a4.1,4.1,0,0,0-4.1,4.1V42.62a4.09,4.09,0,0,0,4.1,4.1H40.78a4.09,4.09,0,0,0,4.1-4.1V22.89A4.1,4.1,0,0,0,40.78,18.79ZM27.1,33.17V38a2.1,2.1,0,0,1-4.2,0v-4.8A3.78,3.78,0,0,1,21,29.92a4,4,0,0,1,8,0A3.78,3.78,0,0,1,27.1,33.17Zm8.08-14.38H14.82V15.05a10.18,10.18,0,1,1,20.36,0Z"/><rect class="cls2-2" width="50" height="50"/></g></g></svg>
+                    </div>
+                    <ion-input type="password"
+                           required
+                           maxlength="12"
+                           minlength="6"
+                           name="mypassword"
+                           #password="ngModel"
+                           [(ngModel)]="myPassword"
+                           (focus)="goscroll()"
+                           [placeholder]="'密码'">
+                    </ion-input>
+                    <form-message [control]="password" [fieldName]="'密码'"></form-message>
+                </div>
+                <!--<div class="forget">-->
+                    <!--<span class="n-font" tappable (click)="forgetPassword()">忘记密码？</span>-->
+                <!--</div>-->
+
+                <div class="btnlogin">
+                    <div>
+                        <button ion-button  outline [disabled]="!myForm.form.valid" tappable (click)="login()">登录</button>
+                        <!--<button ion-button  outline  tappable (click)="login()">登錄</button>-->
+                    </div>
+                </div>
+
+                <button ion-button clear small (click)="goRegister()">还没有账号？立即注册</button>
+
+            </form>
+        </div>
+    </div>
+
+</ion-content>

@@ -1,0 +1,132 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+        primary:    #39aba7,
+        secondary:  #32db64,
+        danger:     #f53d3d,
+        light:      #f4f4f4,
+        dark:       #212b35,
+        lightDark:  #90959a,
+        gray:       #f7f7f7,
+        yellow:     #f9ae3a,
+        white:      #ffffff
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+// 全局字体
+$font-family-base: 'PingFang-SC-Medium', -apple-system, "Helvetica Neue", "Roboto", sans-serif;
+$text-ios-color: color($colors,dark);
+
+//搜索框
+$searchbar-ios-background-color: #fff;
+$searchbar-ios-input-background-color: color($colors,gray);
+$searchbar-ios-input-search-icon-svg:
+        "<svg version='1.1' id='图层_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+viewBox='0 0 50 50' style='enable-background:new 0 0 50 50;' xml:space='preserve'>
+<style type='text/css'>
+                      .st0{fill:none;}
+.st1{fill:#39ABA7;}
+</style>
+<title>资源 55</title>
+<g id='图层_2_1_'>
+<g id='图层_1-2'>
+<g>
+<rect class='st0' width='50' height='50'/>
+</g>
+<g>
+<path class='st1' d='M23.5,42C13.4,42,5.1,33.7,5.1,23.5S13.4,5,23.6,5C33.7,5.1,42,13.4,42,23.5C42,33.7,33.7,42,23.5,42z
+				 M23.5,9.1C15.5,9.1,9,15.6,9,23.6S15.6,38,23.5,38S38,31.5,38,23.5S31.5,9.1,23.5,9.1z'/>
+</g>
+<g>
+<path class='st1' d='M46.9,48.9c-0.5,0-1-0.2-1.4-0.6L33.8,36.6c-0.8-0.8-0.8-2,0-2.8s2-0.8,2.8,0l11.7,11.7c0.8,0.8,0.8,2,0,2.8
+				C47.9,48.7,47.4,48.9,46.9,48.9z'/>
+</g>
+</g>
+</g>
+</svg>";
+$searchbar-ios-input-search-icon-size: 1.8rem;
+$searchbar-ios-input-search-icon-color: color($colors,primary);
+
+//refresher
+$refresher-border-color: #f7f7f7;
+
+//toggle
+$toggle-ios-border-width: 1px;

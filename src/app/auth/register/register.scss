@@ -1,0 +1,231 @@
+page-register {
+
+  .scroll-content{
+    background-color:#fff !important;
+  }
+  .myback{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin:vw(70) 0 0 vw(30);
+    font-size:1.5rem;
+    ion-icon{
+      font-size:2.2rem;
+    }
+    span{
+      margin-left: vw(4);
+    }
+  }
+
+  .mycontain{
+    margin:vw(90) auto 0 auto;
+    width:vw(540);
+
+    .myform{
+      .selphone{
+        position: relative;
+      }
+      .flex{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-top:vw(2) solid rgba(33,43,53,0.2);
+        //padding:vw(28) 0 ;
+        .mysvg{
+          width:vw(35);
+          margin:0 vw(30);
+        }
+        .phonesvg{
+          margin-right: vw(10);
+        }
+        ion-input{
+          width:vw(455);
+          font-size: 1.4rem;
+          margin-left:vw(10);
+          //hieght:
+          input{
+            margin:0;
+            border:none;
+            padding:vw(23) 0;
+            height:vw(106);
+            line-height:vw(60);
+          }
+        }
+        .areainput{
+          width:vw(280);
+          font-size: 1.4rem;
+          margin :0 0 0 vw(20);
+          border:none;
+          padding:vw(23) 0;
+          height:vw(106);
+          line-height:vw(60);
+        }
+
+
+        //区号，电话栏
+        .selcodebtn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          //border: vw(2) solid transparent;
+          height: vw(106);
+          .areanum{
+            width:vw(108);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left:vw(30);
+            margin-right:vw(20);
+            span{
+              font-size:1.4rem;
+            }
+            ion-icon{
+              opacity: 0.3;
+              font-size:2.3rem;
+            }
+          }
+          //分割線
+          .separation{
+            height:vw(80);
+            border-right:vw(2) solid rgba(33,43,53,0.1);
+            //margin:0 vw(20);
+          }
+        }
+        //下拉出现阴影
+        .sel-area-active{
+          box-shadow: 0px 3px 10px 0px rgba(54,73,72,0.2);
+          .separation{
+            border-color: transparent;
+          }
+        }
+
+
+        //区号选择框
+        .area-code{
+          width:vw(160);
+          font-size:vw(22);
+          // height:vw(360);
+          //height:0;
+          z-index:20;
+          letter-spacing: vw(1);
+          position: absolute;
+          background: #fff;
+          color:#453246;
+          //border:1px solid #dcdcdc;
+          top:vw(106);
+          left:vw(75);
+          transition: all 300ms;
+
+          border-radius: 0 0 5px 5px;
+          opacity: 0;
+          visibility: hidden;
+          box-shadow: 0px 3px 10px 0px rgba(54,73,72,0.2);
+          .area-container{
+            width:64%;
+            height:100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin:0 18%;
+            border-bottom: 1px solid #dcdcdc;
+            font-size:1.4rem;
+          }
+          .area-code-item:last-child .area-container{
+            border:none;
+          }
+          .area-code-item{
+            display: flex;
+            letter-spacing: vw(1);
+            justify-content: center;
+            align-items: center;
+            height:0;
+            opacity: 0;
+            transition: all 300ms;
+            .arrow{
+              // transform:rotate(90deg);
+              // margin-left:vw(14);
+              // width:vw(22);
+              // height:vw(22);
+              // background-image: url(../assets/imgs/forward-icon.svg);
+              // background-repeat: no-repeat
+            }
+            .inner-area-code-item{
+              // padding-right:vw(26);
+            }
+          }
+        }
+
+        .show-area-code{
+          //height:vw(360) !important;
+          opacity: 1;
+          visibility:visible ;
+          .area-code-item{
+            height:vw(80);
+            opacity: 1;
+            background-color: #f7f7f7;
+          }
+
+
+        }
+
+
+        //验证码
+        .codeinput{
+          width:vw(240);
+        }
+        .btncode{
+          .button-ios{
+            width:vw(170);
+            height:vw(60);
+            background:  linear-gradient(-60deg,#39aba7,#00dad2);
+            font-size: 1.4rem;
+          }
+          button[disabled], [ion-button][disabled]{
+            opacity: 0.3 !important;
+          }
+        }
+        input::-webkit-input-placeholder {
+          font-size: 1rem;
+        }
+      }
+      .borderbottom{
+        border-bottom:1px solid rgba(33,43,53,0.2);
+      }
+      .btnlogin{
+        text-align: center;
+        margin-top:vh(130);
+        .button-outline-ios{
+          width:100%;
+          height:vw(80);
+          border-radius:vw(40);
+          font-weight: bold;
+          margin:0;
+          color:#fff;
+          font-size:1.4rem;
+          background:  linear-gradient(-60deg,#39aba7,#00dad2);
+          border:none;
+
+        }
+        button[disabled], [ion-button][disabled]{
+          opacity: 0.3 !important;
+        }
+      }
+      //用户注册协议
+      .agreement{
+        margin-top: vh(90);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p{
+          padding-left:vw(10);
+          margin:0;
+          color:color($colors,dark);
+          font-size:1.4rem;
+        }
+      }
+    }
+
+  }
+
+}

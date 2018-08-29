@@ -1,0 +1,18 @@
+page-chat-list-modal{
+  .scroll-content{
+    background-color: #fff!important;
+    .delete-chat{
+      margin: vw(65) 0 vw(75);
+      .title,.btn{
+        padding: 0 vw(75);
+      }
+      .title{
+        color: color($colors,dark);
+        opacity: .3;
+      }
+      .btn{
+        margin-top: vw(80);
+      }
+    }
+  }
+}

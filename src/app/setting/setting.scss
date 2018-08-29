@@ -1,0 +1,74 @@
+page-setting {
+
+
+
+
+  div.color-radios{
+    margin:0 vw(20);
+    font-size:1.2rem;
+
+  }
+  //选项列表样式
+  ion-list.color-radios{
+    margin-top: vw(20);
+    margin-bottom:0;
+    padding: vw(1) 0;
+    .item-block:first-child{
+      border-top: 0;
+    }
+    .item-ios:not(:last-child){
+      border-bottom:vw(2) solid #f7f7f7 !important;
+    }
+    .item-ios:last-child{
+      border:none;
+    }
+
+    .item-block{
+      min-height:vw(88);
+      padding:0 vw(30);
+      .thesvg{
+        width:vw(42);
+        height:vw(42);
+        margin-right:vw(20);
+        .lsvg{
+          width:vw(42);
+        }
+      }
+      .item-inner{
+        padding:0;
+        color:#212b35;
+        font-size:1.4rem;
+        height:vw(88);
+      }
+      ion-icon {
+        font-size:1.8rem;
+        padding-top:8px;
+        color:rgba(33,43,53,0.3);
+        margin-right:0;
+      }
+    }
+
+
+
+  }
+
+  .item-ios.activated{
+    background-color: #fff;
+  }
+
+
+  .list-ios .item-block .item-inner,
+  .list-md .item-block .item-inner{
+    border-bottom:0 !important;
+  }
+
+  .logoutbtn{
+    height:vw(88);
+    line-height:vw(88);
+    text-align: center;
+    color: #f9ae3a;
+    margin-top:vw(20);
+    background-color:#fff;
+  }
+
+}

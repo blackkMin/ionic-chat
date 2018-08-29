@@ -1,0 +1,32 @@
+<div *ngIf="control.errors">
+  <div *ngIf="control.dirty || control.touched">
+    <div class="alert alert-danger" [ngClass]="{'d-none': !control.errors.required}">
+      必须填写{{fieldName}}
+    </div>
+    <div class="alert alert-danger" [ngClass]="{'d-none': !control.errors.minlength}">
+      {{fieldName}}至少需要{{control.errors.minlength?.requiredLength}}个字
+    </div>
+    <div class="alert alert-danger"  [ngClass]="{'d-none': !control.errors.maxlength}">
+      {{fieldName}}不能超过{{control.errors.maxlength?.requiredLength}}个字
+    </div>
+
+    <div [ngClass]="{'d-none': control.errors.required}">
+      <div class="alert alert-danger" [ngClass]="{'d-none': !control.errors.onlyNumber}">
+        {{fieldName}}只能为数字类型
+      </div>
+    </div>
+    <div [ngClass]="{'d-none': control.errors.required}">
+      <div class="alert alert-danger" [ngClass]="{'d-none': !control.errors.tel}">
+        {{fieldName}}格式不正确
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger" [ngClass]="{'d-none': !control.errors.ng2SelectRequired}">
+    必须填{{fieldName}}
+  </div>
+
+  <div class="alert alert-danger" [ngClass]="{'d-none': !control.errors.minDate}">
+    min date
+  </div>
+</div>

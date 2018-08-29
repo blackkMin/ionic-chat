@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dog Breeds</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addFriends($event)">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="alpha-list-page">
+  <ion-alpha-scroll *ngIf="breeds"
+                    [listData]="breeds"
+                    key="name"
+                    [itemTemplate]="alphaScrollItemTemplate"
+                    [currentPageClass]="currentPageClass"
+                    [triggerChange]="triggerAlphaScrollChange">
+  </ion-alpha-scroll>
+</ion-content>

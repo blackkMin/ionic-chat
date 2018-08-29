@@ -1,0 +1,36 @@
+page-remark {
+  .scroll-content{
+    background-color: #fff!important;
+    .reject-modal{
+      .text-area{
+        padding: 0 vw(30);
+      }
+      .reject-btn{
+        background-color: color($colors,gray);
+        padding: vw(15) vw(57);
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .line{
+          width: 1px;
+          opacity: .1;
+          background-color: color($colors,dark);
+        }
+        .button-ios{
+          width: vw(160.03);
+          height: vw(60);
+          font-size: 1.4rem;
+          border-radius: 5px;
+        }
+        .button-ios:first-child{
+          opacity: .3;
+        }
+        .button-ios:last-child{
+          background: linear-gradient(-60deg, #39aba7, #00dad2);
+        }
+      }
+    }
+  }
+}

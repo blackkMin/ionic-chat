@@ -1,0 +1,19 @@
+<ion-content no-bounce>
+  <form #rejectOpinionForm="ngForm" class="form-horizontal" role="form">
+    <div class="reject-modal">
+      <div class="text-area">
+        <ion-textarea id="rejectRemark" name="remark" rows="8" class="form-control"
+                      required
+                      [(ngModel)]="remark"
+                      placeholder="請輸入.."
+        ></ion-textarea>
+      </div>
+      <div class="reject-btn">
+        <button no-padding no-margin ion-button (click)="viewCtrl.dismiss()" color="dark">取消</button>
+        <div class="line"></div>
+        <button no-padding no-margin ion-button (click)="''" [disabled]="!rejectOpinionForm.form.valid" (click)="returnBack()">确定</button>
+      </div>
+    </div>
+  </form>
+</ion-content>
+

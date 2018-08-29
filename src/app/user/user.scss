@@ -1,0 +1,152 @@
+page-user {
+
+  .toolbar-background-ios,
+  .toolbar-background-md{
+  }
+  ion-header .toolbar{
+    padding:0;
+  }
+  .scroll-content{
+    padding-top: vw(12);
+    padding-bottom: vw(12);
+  }
+  .header{
+    .toolbar-background{
+      background: url('./../assets/imgs/account-bg.png') no-repeat ;
+      border:none;
+    }
+    .myheader{
+      background-size: cover;
+      padding-bottom: vw(20);
+      height:vw(410);
+      .avatar{
+        text-align: center;
+        color:#fff;
+        padding-top: vw(20);
+        font-weight: bold;
+        font-size: 1.4rem;
+        .theimg{
+          text-align: center;
+          border:vw(10) solid rgba(255,255,255,0.2);
+          display: inline-block;
+          border-radius: 50%;
+          div{
+            width:vw(140);
+            height:vw(140);
+            border-radius: 50%;
+            position: relative;
+            float:left;
+            overflow: hidden;
+            >img{
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+        }
+        .name{
+          margin-top:vw(10);
+          font-size:1.9rem;
+          height: vw(36);
+          line-height: vw(36);
+        }
+        .company{
+          margin-top:vw(20);
+          height: vw(28);
+          line-height: vw(28);
+
+        }
+        .btn{
+          margin-top:vw(50);
+          .button-outline{
+            height:vw(60);
+            width:vw(160);
+            border-color:#fff;
+            margin:0;
+            color:#fff;
+            font-size:1.4rem;
+            border-radius: 5px;
+          }
+        }
+      }
+
+
+
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+  div.color-radios{
+    margin:0 vw(20);
+    font-size:1.2rem;
+
+  }
+  //选项列表样式
+  ion-list.color-radios{
+    margin-top: vw(20);
+    margin-bottom:0;
+    padding: vw(1) 0;
+    .item-block:first-child{
+      border-top: 0;
+    }
+    .item-ios:not(:last-child){
+      border-bottom:vw(2) solid #f7f7f7 !important;
+    }
+    .item-ios:last-child{
+      border:none;
+    }
+
+    .item-block{
+      min-height:vw(88);
+      padding:0 vw(30);
+      .thesvg{
+        width:vw(42);
+        height:vw(42);
+        margin-right:vw(20);
+        .lsvg{
+          width:vw(42);
+        }
+      }
+      .item-inner{
+        padding:0;
+        color:#212b35;
+        font-size:1.4rem;
+        height:vw(88);
+      }
+      ion-icon {
+        font-size:1.8rem;
+        padding-top:8px;
+        color:rgba(33,43,53,0.3);
+        margin-right:0;
+      }
+    }
+
+
+
+  }
+
+  .item-ios.activated{
+    background-color: #fff;
+  }
+
+
+  .list-ios .item-block .item-inner,
+  .list-md .item-block .item-inner{
+    border-bottom:0 !important;
+  }
+
+}

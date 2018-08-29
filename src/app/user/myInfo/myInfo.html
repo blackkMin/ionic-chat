@@ -1,0 +1,88 @@
+<!--
+  Generated template for the MyInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+    <ion-navbar  color="primary">
+        <ion-title>个人信息</ion-title>
+        <ion-buttons end>
+            <button ion-button tappable [disabled]="!myForm.form.valid || (!myForm.form.dirty && !newUserIcon)"  (click)="save()">保存</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="avatar">
+        <div class="theimg" tappable>
+            <div tappable (click)="addimg()">
+                <img *ngIf="userInfo" [chat-avatar]="userInfo.username"
+                     [src]="userInfo | formatAvatar" alt="">
+            </div>
+        </div>
+        <div class="notice n-font">点击修改头像</div>
+
+    </div>
+
+    <form #myForm="ngForm">
+        <div class="card" *ngIf="userInfo">
+            <div class="service-flex">
+                <div>昵称</div>
+                <div class="icon-padding">
+                    <div>
+                        <ion-input type="text"
+                                   required
+                                   maxlength="10"
+                                   minlength="1"
+                                   name="nickname"
+                                   #nickname="ngModel"
+                                   [(ngModel)]="userInfo.nickname"
+                                   [placeholder]="'请输入'">
+                        </ion-input>
+                    </div>
+                </div>
+            </div>
+            <div class="service-flex">
+                <div>个性签名</div>
+                <div class="icon-padding">
+                    <div>
+                        <ion-input type="text"
+                                   required
+                                   maxlength="30"
+                                   minlength="1"
+                                   name="signature"
+                                   #signature="ngModel"
+                                   [(ngModel)]="userInfo.signature"
+                                   [placeholder]="'请输入'">
+                        </ion-input>
+                    </div>
+                </div>
+            </div>
+            <div class="service-flex">
+                <div>性别</div>
+                <div class="icon-padding">
+                    <div class="selGender">
+
+                        <ion-list class="end-flex" radio-group name="gender" [(ngModel)]="userInfo.gender">
+                            <ion-item>
+                                <ion-radio  value="M"></ion-radio>
+                                <ion-label>男</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-radio  value="F"></ion-radio>
+                                <ion-label>女</ion-label>
+                            </ion-item>
+                        </ion-list>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</ion-content>

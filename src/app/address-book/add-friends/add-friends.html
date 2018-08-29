@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>123</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="add()">添加</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div padding>
+        <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="single">
+                找人
+            </ion-segment-button>
+            <ion-segment-button value="group">
+                找群
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+
+    <div [ngSwitch]="type">
+        <form #number>
+            <ion-item>
+                <ion-input placeholder="{{'请输入' + (type === 'single' ? '手机号码' : '群号码')}}"
+                           name="number" [(ngModel)]="num" (keyup.enter)="search()"></ion-input>
+            </ion-item>
+        </form>
+    </div>
+
+
+
+</ion-content>

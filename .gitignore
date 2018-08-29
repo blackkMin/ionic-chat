@@ -1,0 +1,7 @@
+/node_modules
+/.sourcemaps
+/platforms
+/plugins
+/resources
+/www
+/package-lock.json

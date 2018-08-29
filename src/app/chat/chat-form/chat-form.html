@@ -1,0 +1,74 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>{{conversation?.target?.type === 'group' ? conversation?.target?.name : conversation?.target?.nickname}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="conversation?.target?.type === 'group'" (click)="goChatDetail()">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="message-wrap">
+
+    <div *ngFor="let msg of msgList"
+         class="message"
+         [class.left]=" msg.from.username !== user.username"
+         [class.right]=" msg.from.username === user.username ">
+      <ng-container *ngIf="msg.from.username !== '系统消息'">
+        <img class="user-img" *ngIf="msg.from.username === user.username" [chat-avatar]="user.username"
+             [src]="msg.target | formatAvatar" alt="">
+        <img class="user-img" *ngIf="msg.from.username !== user.username" [chat-avatar]="msg.from.username"
+             [src]="msg.target | formatAvatar" alt="">
+        <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner>
+        <div class="msg-detail">
+          <div class="msg-info">
+            <p>{{msg.from.nickname}}&nbsp;&nbsp;&nbsp;{{msg.createTime | relativeTime}}</p>
+          </div>
+          <div class="msg-content">
+            <span class="triangle"></span>
+            <p class="line-breaker ">{{msg.text}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <!--<ng-container *ngIf="msg.from.username === '系统消息'">-->
+        <!--<div class="system">-->
+          <!--<p>{{msg.createTime | relativeTime}}</p>-->
+          <!--<div class="font-22 start">{{ msg.target.owner }}{{'chat.start_group_chat' | translate}}</div>-->
+        <!--</div>-->
+      <!--</ng-container>-->
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '61px'" tappable (click)="holdKeyboard()">
+  <ion-toolbar>
+    <div class="input-textarea-autosize">
+      <button ion-button clear icon-only item-right (click)="switchEmojiPicker();$event.stopPropagation();">
+        <ion-icon name="md-happy"></ion-icon>
+      </button>
+      <textarea #chat_input
+                autosize
+                placeholder="Send a message"
+                [(ngModel)]="editorMsg"
+                (keyup.enter)="sendMsg()"
+                (focusin)="onFocus()"
+                (focusout)="onFocusOut()">
+      </textarea>
+      <button ion-button small item-right *ngIf="editorMsg" (click)="sendMsg()">
+        send
+      </button>
+      <button ion-button icon-only clear item-right *ngIf="!editorMsg">
+        <ion-icon ios="ios-add-circle-outline"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+  <emoji-picker [(ngModel)]="editorMsg"></emoji-picker>
+</ion-footer>

@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{groupInfo.name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-index-list>
+        <ion-index-section *ngFor="let list of members;let i = index" [index]="membersIndex[i]">
+            <ion-index-cell *ngFor="let member of list">
+                <div class="each">
+                    <img [chat-avatar]="member.username" [src]="member | formatAvatar">
+                    <div>{{member.nickname}}</div>
+                </div>
+            </ion-index-cell>
+        </ion-index-section>
+
+        <!--<ion-index-section [index]="'B'">-->
+        <!--<ion-index-cell>-->
+        <!--222-->
+        <!--</ion-index-cell>-->
+        <!--<ion-index-cell>-->
+        <!--222-->
+        <!--</ion-index-cell>-->
+        <!--<ion-index-cell>-->
+        <!--222-->
+        <!--</ion-index-cell>-->
+        <!--<ion-index-cell>-->
+        <!--222-->
+        <!--</ion-index-cell>-->
+        <!--</ion-index-section>-->
+    </ion-index-list>
+</ion-content>
