@@ -2,6 +2,7 @@
 /.sourcemaps
 /platforms
 /plugins
-/resources
+/resources/android
+/resources/ios
 /www
 /package-lock.json
