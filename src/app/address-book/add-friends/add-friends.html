@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [@flyInOut1]="animateState">
     <ion-navbar>
         <ion-title>123</ion-title>
         <ion-buttons end>
@@ -7,6 +7,7 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
+    <ng-container *ngIf="animateState==='in'">
     <div padding>
         <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)">
             <ion-segment-button value="single">
@@ -19,15 +20,24 @@
     </div>
 
 
-    <div [ngSwitch]="type">
-        <form #number>
-            <ion-item>
-                <ion-input placeholder="{{'请输入' + (type === 'single' ? '手机号码' : '群号码')}}"
-                           name="number" [(ngModel)]="num" (keyup.enter)="search()"></ion-input>
-            </ion-item>
-        </form>
+        <div [ngSwitch]="type">
+            <form #number>
+                <ion-item>
+                    <ion-input placeholder="{{'请输入' + (type === 'single' ? '手机号码' : '群号码')}}"
+                               name="number" [(ngModel)]="num" (keyup.enter)="search()"
+                               (ionFocus)="focus($event)"></ion-input>
+                </ion-item>
+            </form>
+        </div>
+    </ng-container>
+
+    <div class="mask-bg" *ngIf="animateState==='out'">
+        <div class="center-flex search-input" padding>
+            <ion-input inset placeholder="{{'请输入' + (type === 'single' ? '手机号码' : '群号码')}}"
+                       name="number" [(ngModel)]="num" (keyup.enter)="search()"></ion-input>
+            <button ion-button clear no-padding (click)="cancel()">取消</button>
+        </div>
+
     </div>
-
-
 
 </ion-content>

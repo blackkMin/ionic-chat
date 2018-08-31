@@ -9,6 +9,7 @@ import {CoreModule} from "../common/core.module";
 import {NativeService} from "../providers/native.service";
 import { IonAlphaScrollModule } from 'ionic4-alpha-scroll';
 import {ModalFromBottomEnter, ModalFromBottomLeave} from "./modal-transitions";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import {ModalFromBottomEnter, ModalFromBottomLeave} from "./modal-transitions";
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         CoreModule,
         IonicModule.forRoot(MyApp, {
             mode: 'ios',
