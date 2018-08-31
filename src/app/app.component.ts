@@ -10,7 +10,7 @@ import {NativeService} from "../providers/native.service";
     templateUrl: 'app.html'
 })
 export class MyApp {
-    rootPage: any = 'LoginPage';
+    rootPage: any = 'TabsPage';
 
     constructor(platform: Platform,
                 statusBar: StatusBar,
@@ -22,7 +22,7 @@ export class MyApp {
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
-            this.getInfo();
+            // this.getInfo();
         });
     }
 

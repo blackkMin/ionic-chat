@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>123</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="onSubmit()" [disabled]="!form.valid">
+                Save
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div *ngFor="let question of data" class="form-row">
+            <app-desc [question]="question" [form]="form"></app-desc>
+        </div>
+    </form>
+</ion-content>

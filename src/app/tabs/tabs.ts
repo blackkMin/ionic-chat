@@ -10,6 +10,7 @@ export class TabsPage {
   tab1Root = 'ChatListPage';
   tab2Root = 'AddressBookPage';
   tab3Root = 'UserPage';
+  tab4Root = 'DynamicFormPage';
 
   constructor() {
 
